@@ -8,27 +8,27 @@ import { API } from 'aws-amplify';
 
 const App = () => {
 
-  // Create coins variable and set to empty array
-  const [coins, updateCoins] = useState([]);
+// Create coins variable and set to empty array
+const [coins, updateCoins] = useState([]);
 
-  // Define function to all API
-  const fetchCoins = async () => {
+// Define function to all API
+const fetchCoins = async () => {
     const data = await API.get('cryptoapi', '/coins');
     updateCoins(data.coins);
 
-}
+ }
 
 // Call fetchCoins function when component loads
 useEffect(
-  () => {
-    fetchCoins();
-  }
+() => {
+  fetchCoins();
+   }
 , []
 );
 
   return (
-    <div className="App">
-      {
+   <div className="App">
+       {
         coins.map(x => (
           <div >
             <h2>
@@ -38,9 +38,9 @@ useEffect(
               ${ x.price_usd }
             </h5>
           </div>
-        ))
-      }
-    </div>
+         ))
+       }
+     </div>
   );
 }
 
