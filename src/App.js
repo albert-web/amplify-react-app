@@ -21,8 +21,8 @@ const App = () => {
 // Call fetchCoins function when component loads
 useEffect(
   () => {
-fetchCoins();
-}
+    fetchCoins();
+  }
 , []
 );
 
