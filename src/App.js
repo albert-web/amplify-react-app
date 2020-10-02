@@ -13,8 +13,8 @@ const App = () => {
 
   // Define function to all API
   const fetchCoins = async () => {
-    const data = await API.get('cryptoapi', '/coins')
-    updateCoins(data.coins)
+    const data = await API.get('cryptoapi', '/coins');
+    updateCoins(data.coins);
 
 }
 
@@ -29,13 +29,13 @@ fetchCoins();
   return (
     <div className="App">
       {
-        coins.map((coin, index) => (
-          <div key={index}>
+        coins.map(x => (
+          <div >
             <h2>
-              {coin.name} - {coin.symbol}
+              { x.name } - { x.symbol }
             </h2>
             <h5>
-              ${coin.price_usd}
+              ${ x.price_usd }
             </h5>
           </div>
         ))
