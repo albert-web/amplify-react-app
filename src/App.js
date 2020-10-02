@@ -1,4 +1,4 @@
-import Reactt, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 // Import useState and useEffect hooks from React
 import './App.css';
