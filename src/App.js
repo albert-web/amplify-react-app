@@ -38,7 +38,7 @@ const App = () => {
                     ${ x.price_usd }
                 </h5>
             </div>
-            ))
+            ));
         }
         </div>
     );
