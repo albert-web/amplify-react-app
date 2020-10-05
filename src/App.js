@@ -14,7 +14,7 @@ const App = () => {
     // Define function to all API
     const fetchCoins = async () => {
         console.log('you');
-        const data = await API.get('cryptoapi', '/coins');
+        const data = await API.get('cryptoapi', `/coins?limit=${input.limit}&start=${input.start}`);
         updateCoins(data.coins);
 
     }
@@ -26,6 +26,16 @@ const App = () => {
         }
         , []
     );
+     const [input, updateInput] = useState({ start: 0, limit: 3 })
+
+     const updateInputValues = (type, value) => {
+         updateInput({
+             ...input
+             , [type]: value
+         });
+     }
+
+
 
     return (
         <div className="App">
