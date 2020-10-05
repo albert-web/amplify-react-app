@@ -48,8 +48,10 @@ const App = () => {
              onChange={ e => updateInputValues('limit', e.target.value)}
             />
 
-            <button>
+            <button
                 onClick={fetchCoins}
+            >
+                Fetch Coins
             </button>
         {
             coins.map(x => (
