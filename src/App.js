@@ -39,6 +39,18 @@ const App = () => {
 
     return (
         <div className="App">
+            <input 
+            placeholder='start here...'
+            onChange={ e => updateInputValues('start', e.target.value)}
+            />
+            <input
+             placeholder='limit to...'
+             onChange={ e => updateInputValues('limit', e.target.value)}
+            />
+
+            <button>
+                onClick={fetchCoins}
+            </button>
         {
             coins.map(x => (
             <div 
