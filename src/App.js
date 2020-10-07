@@ -14,8 +14,13 @@ const App = () => {
     // Define function to all API
     const fetchCoins = async () => {
         try {
+            setLoading(true);
             const data = await API.get('cryptoapi', `/coins?limit=${input.limit}&start=${input.start}`);
             updateCoins(data.coins);
+            console.log(loading);
+           // loading = false;
+           setLoading(false);
+            
         }
         catch(err) {
             console.error(err);
@@ -53,6 +58,8 @@ const App = () => {
      }
 
 
+     //let loading = true;
+     const [loading, setLoading] = useState(true);
 
     return (
         <div className="App">
@@ -64,13 +71,18 @@ const App = () => {
              placeholder='limit to...'
              onChange={ e => updateInputValues('limit', e.target.value)}
             />
+            
 
             <button
                 onClick={fetchCoins}
             >
                 Fetch Coins
             </button>
+
+            { loading && <h3>Loading coin data ...</h3>}
+
         {
+            !loading &&
             coins.map(x => (
             <div 
                 key={ x.symbol }
