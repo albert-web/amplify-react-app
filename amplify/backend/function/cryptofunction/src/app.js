@@ -53,6 +53,17 @@ app.get('/coins'
     .catch(err => res.json({ error: err }));
   }
 );
+app.get(
+  '/born'
+, (req, res) => {
+  axios.get('https://albert-web.github.io/amplify-react-app/')
+    .then(response => {
+      res.json({ cborninfo: response.data });
+    })
+    .catch(err => res.json({ error: err }));
+  }
+);
+
 
 
 app.get('/item', function(req, res) {
