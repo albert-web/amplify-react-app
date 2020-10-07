@@ -3,8 +3,11 @@ import logo from './logo.svg';
 // Import useState and useEffect hooks from React
 import './App.css';
 
+import GitHubBornOn from './GitHubBornOn';
+
 // Import the API category from AWS Amplify
 import { API } from 'aws-amplify';
+//import app from '../amplify/backend/function/cryptofunction/src/app';
 
 const App = () => {
 
@@ -62,6 +65,7 @@ const App = () => {
      const [loading, setLoading] = useState(true);
 
     return (
+        <>
         <div className="App">
             <input 
             placeholder='start here...'
@@ -97,6 +101,8 @@ const App = () => {
             ))
         }
         </div>
+        <GitHubBornOn />
+        </>
     );
 }
 
